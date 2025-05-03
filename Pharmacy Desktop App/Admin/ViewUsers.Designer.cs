@@ -1,0 +1,103 @@
+﻿namespace Pharmacy_Desktop_App.Admin
+{
+    partial class ViewUsers
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridOFAllUsers = new DataGridView();
+            AllUsersLabel = new Label();
+            ((System.ComponentModel.ISupportInitialize)DataGridOFAllUsers).BeginInit();
+            SuspendLayout();
+            // 
+            // DataGridOFAllUsers
+            // 
+            DataGridOFAllUsers.AllowUserToAddRows = false;
+            DataGridOFAllUsers.AllowUserToDeleteRows = false;
+            DataGridOFAllUsers.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            DataGridOFAllUsers.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            DataGridOFAllUsers.BackgroundColor = SystemColors.Window;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = SystemColors.Control;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            DataGridOFAllUsers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            DataGridOFAllUsers.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = SystemColors.Window;
+            dataGridViewCellStyle4.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle4.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
+            DataGridOFAllUsers.DefaultCellStyle = dataGridViewCellStyle4;
+            DataGridOFAllUsers.Location = new Point(12, 71);
+            DataGridOFAllUsers.Name = "DataGridOFAllUsers";
+            DataGridOFAllUsers.ReadOnly = true;
+            DataGridOFAllUsers.RowHeadersWidth = 51;
+            DataGridOFAllUsers.Size = new Size(776, 336);
+            DataGridOFAllUsers.TabIndex = 0;
+            // 
+            // AllUsersLabel
+            // 
+            AllUsersLabel.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            AllUsersLabel.AutoSize = true;
+            AllUsersLabel.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            AllUsersLabel.Location = new Point(324, 7);
+            AllUsersLabel.Name = "AllUsersLabel";
+            AllUsersLabel.Size = new Size(141, 41);
+            AllUsersLabel.TabIndex = 1;
+            AllUsersLabel.Text = "All Users";
+            // 
+            // ViewUsers
+            // 
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Controls.Add(AllUsersLabel);
+            Controls.Add(DataGridOFAllUsers);
+            MaximizeBox = false;
+            MinimumSize = new Size(818, 497);
+            Name = "ViewUsers";
+            Text = "ViewUsers";
+            WindowState = FormWindowState.Maximized;
+            Load += ViewUsers_Load;
+            ((System.ComponentModel.ISupportInitialize)DataGridOFAllUsers).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
+        }
+
+        #endregion
+
+        private DataGridView DataGridOFAllUsers;
+        private Label AllUsersLabel;
+    }
+}
