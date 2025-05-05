@@ -1,14 +1,5 @@
 ﻿using Business_Layer.UnitOFWork;
 using Business_Logic.Models;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace Pharmacy_Desktop_App.Pharmacist
 {
@@ -49,7 +40,7 @@ namespace Pharmacy_Desktop_App.Pharmacist
                 {
 
                     var Item = (Medicine)Medicine.DataBoundItem;
-                    bool MedicineIsDeletedFromMemory =  UnitOFWork.Medicine.Delete(Item);
+                    bool MedicineIsDeletedFromMemory = UnitOFWork.Medicine.Delete(Item);
                     bool MedicineIsDeletedFromDatabase = UnitOFWork.Medicine.Save();
                     if (MedicineIsDeletedFromMemory && MedicineIsDeletedFromDatabase)
                     {

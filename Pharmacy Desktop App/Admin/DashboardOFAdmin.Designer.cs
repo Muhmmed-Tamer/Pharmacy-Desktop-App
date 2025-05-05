@@ -34,6 +34,7 @@
             ProfileButton = new Button();
             LogOutButton = new Button();
             PictureOFAdmin = new PictureBox();
+            GenerateReportButton = new Button();
             ((System.ComponentModel.ISupportInitialize)PictureOFAdmin).BeginInit();
             SuspendLayout();
             // 
@@ -55,7 +56,7 @@
             ViewUsersButton.Anchor = AnchorStyles.Left;
             ViewUsersButton.BackColor = SystemColors.ScrollBar;
             ViewUsersButton.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            ViewUsersButton.Location = new Point(31, 132);
+            ViewUsersButton.Location = new Point(31, 117);
             ViewUsersButton.Name = "ViewUsersButton";
             ViewUsersButton.Size = new Size(219, 39);
             ViewUsersButton.TabIndex = 1;
@@ -68,7 +69,7 @@
             ProfileButton.Anchor = AnchorStyles.Left;
             ProfileButton.BackColor = SystemColors.ScrollBar;
             ProfileButton.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            ProfileButton.Location = new Point(31, 236);
+            ProfileButton.Location = new Point(31, 192);
             ProfileButton.Name = "ProfileButton";
             ProfileButton.Size = new Size(219, 44);
             ProfileButton.TabIndex = 2;
@@ -100,11 +101,25 @@
             PictureOFAdmin.TabIndex = 4;
             PictureOFAdmin.TabStop = false;
             // 
+            // GenerateReportButton
+            // 
+            GenerateReportButton.Anchor = AnchorStyles.Left;
+            GenerateReportButton.BackColor = SystemColors.ScrollBar;
+            GenerateReportButton.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            GenerateReportButton.Location = new Point(31, 272);
+            GenerateReportButton.Name = "GenerateReportButton";
+            GenerateReportButton.Size = new Size(219, 43);
+            GenerateReportButton.TabIndex = 6;
+            GenerateReportButton.Text = "Generate Report";
+            GenerateReportButton.UseVisualStyleBackColor = false;
+            GenerateReportButton.Click += GenerateReportButton_Click;
+            // 
             // DashboardOFAdmin
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(GenerateReportButton);
             Controls.Add(PictureOFAdmin);
             Controls.Add(LogOutButton);
             Controls.Add(ProfileButton);
@@ -127,5 +142,6 @@
         private Button ProfileButton;
         private Button LogOutButton;
         private PictureBox PictureOFAdmin;
+        private Button GenerateReportButton;
     }
 }

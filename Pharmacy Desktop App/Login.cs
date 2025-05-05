@@ -1,15 +1,8 @@
-
-using  Business_Layer;
 using Business_Layer.UnitOFWork;
-using Business_Layer.Repositories;
-using Microsoft.AspNetCore.Identity;
-using Business_Logic.Models;
-using Microsoft.IdentityModel.Tokens;
 using Business_Layer.Utility;
+using Business_Logic.Models;
 using Pharmacy_Desktop_App.Admin;
-using Business_Layer.Services;
 using Pharmacy_Desktop_App.Pharmacist;
-using System.Security.Claims;
 namespace Pharmacy_Desktop_App
 {
     public partial class Login : Form
@@ -19,6 +12,7 @@ namespace Pharmacy_Desktop_App
         {
             InitializeComponent();
             UnitOFWork = unitOFWork;
+
         }
 
 
@@ -37,9 +31,11 @@ namespace Pharmacy_Desktop_App
                         var dashboard = new DashboardOFAdmin(
                                 new AddUserButton(UnitOFWork),
                                 UnitOFWork,
-                                new ViewUsers(UnitOFWork),
                                 this,
-                                UserIsFoundInDataBase);
+                                new ViewUsers(UnitOFWork, UserIsFoundInDataBase),
+                                UserIsFoundInDataBase,
+                                new ReportOFAdmin(UnitOFWork, this)
+                                );
                         if (await UnitOFWork.UserManager.IsInRoleAsync(UserIsFoundInDataBase, StaticData.Administrator))
                         {
                             dashboard.Show();

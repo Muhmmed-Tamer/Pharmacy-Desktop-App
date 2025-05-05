@@ -1,14 +1,5 @@
 ﻿using Business_Layer.UnitOFWork;
 using Business_Logic.Models;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace Pharmacy_Desktop_App.Admin
 {
@@ -17,9 +8,10 @@ namespace Pharmacy_Desktop_App.Admin
         private AddUserButton addUserButton { get; }
         private ViewUsers viewUsers { get; }
         private Login Login { get; }
-        ApplicationUser UserThatLoginForNow { get; set; }
+        private ApplicationUser UserThatLoginForNow { get; set; }
+        private ReportOFAdmin reportOFAdmin { get; set; }
         private IUnitOFWork UnitOFWork;
-        public DashboardOFAdmin(AddUserButton addUserButton, IUnitOFWork unitOFWork, ViewUsers viewUsers, Login login, ApplicationUser UserThatLoginForNow)
+        public DashboardOFAdmin(AddUserButton addUserButton, IUnitOFWork unitOFWork, Login login, ViewUsers viewUsers, ApplicationUser UserThatLoginForNow, ReportOFAdmin reportOFAdmin)
         {
             InitializeComponent();
             this.addUserButton = addUserButton;
@@ -27,6 +19,7 @@ namespace Pharmacy_Desktop_App.Admin
             this.viewUsers = viewUsers;
             this.Login = login;
             this.UserThatLoginForNow = UserThatLoginForNow;
+            this.reportOFAdmin = reportOFAdmin;
         }
 
         private void DashboardOFAdmin_Load(object sender, EventArgs e)
@@ -39,8 +32,10 @@ namespace Pharmacy_Desktop_App.Admin
             addUserButton.Show();
         }
 
-        private void ViewUsersButton_Click(object sender, EventArgs e)
+        private async void ViewUsersButton_Click(object sender, EventArgs e)
         {
+            ApplicationUser User = await UnitOFWork.UserManager.FindByIdAsync(UserThatLoginForNow.Id);
+            ViewUsers viewUsers = new ViewUsers(UnitOFWork, User);
             viewUsers.Show();
         }
 
@@ -60,6 +55,12 @@ namespace Pharmacy_Desktop_App.Admin
         private void ViewLoginForm(object sender, FormClosedEventArgs e)
         {
             Login.Show();
+            this.Hide();
+        }
+
+        private void GenerateReportButton_Click(object sender, EventArgs e)
+        {
+            reportOFAdmin.Show();
             this.Hide();
         }
     }
