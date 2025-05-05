@@ -28,10 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridOFAllUsers = new DataGridView();
             AllUsersLabel = new Label();
+            DeleteUserButton = new Button();
             ((System.ComponentModel.ISupportInitialize)DataGridOFAllUsers).BeginInit();
             SuspendLayout();
             // 
@@ -39,32 +40,33 @@
             // 
             DataGridOFAllUsers.AllowUserToAddRows = false;
             DataGridOFAllUsers.AllowUserToDeleteRows = false;
-            DataGridOFAllUsers.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            DataGridOFAllUsers.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             DataGridOFAllUsers.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             DataGridOFAllUsers.BackgroundColor = SystemColors.Window;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = SystemColors.Control;
-            dataGridViewCellStyle3.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            DataGridOFAllUsers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Control;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            DataGridOFAllUsers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             DataGridOFAllUsers.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = SystemColors.Window;
-            dataGridViewCellStyle4.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle4.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
-            DataGridOFAllUsers.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            DataGridOFAllUsers.DefaultCellStyle = dataGridViewCellStyle2;
             DataGridOFAllUsers.Location = new Point(12, 71);
             DataGridOFAllUsers.Name = "DataGridOFAllUsers";
             DataGridOFAllUsers.ReadOnly = true;
             DataGridOFAllUsers.RowHeadersWidth = 51;
-            DataGridOFAllUsers.Size = new Size(776, 336);
+            DataGridOFAllUsers.Size = new Size(776, 303);
             DataGridOFAllUsers.TabIndex = 0;
+            DataGridOFAllUsers.SelectionChanged += SelectedUserToDelete;
             // 
             // AllUsersLabel
             // 
@@ -77,11 +79,24 @@
             AllUsersLabel.TabIndex = 1;
             AllUsersLabel.Text = "All Users";
             // 
+            // DeleteUserButton
+            // 
+            DeleteUserButton.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            DeleteUserButton.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            DeleteUserButton.Location = new Point(137, 400);
+            DeleteUserButton.Name = "DeleteUserButton";
+            DeleteUserButton.Size = new Size(517, 38);
+            DeleteUserButton.TabIndex = 2;
+            DeleteUserButton.Text = "Delete User";
+            DeleteUserButton.UseVisualStyleBackColor = true;
+            DeleteUserButton.Click += DeleteUserButton_Click;
+            // 
             // ViewUsers
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(DeleteUserButton);
             Controls.Add(AllUsersLabel);
             Controls.Add(DataGridOFAllUsers);
             MaximizeBox = false;
@@ -99,5 +114,6 @@
 
         private DataGridView DataGridOFAllUsers;
         private Label AllUsersLabel;
+        private Button DeleteUserButton;
     }
 }

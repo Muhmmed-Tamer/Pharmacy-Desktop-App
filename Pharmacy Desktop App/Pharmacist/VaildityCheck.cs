@@ -1,13 +1,4 @@
 ﻿using Business_Layer.UnitOFWork;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace Pharmacy_Desktop_App.Pharmacist
 {
@@ -28,6 +19,7 @@ namespace Pharmacy_Desktop_App.Pharmacist
 
             AllMedicineSearshWithValid.DataSource = UnitOFWork.Medicine.SearchByValid(Check.All);
             AllMedicineSearshWithValid.Columns["Id"].Visible = false;
+            AllMedicineSearshWithValid.Columns["Carts"].Visible = false;
         }
 
         private void ChooseAnotherCategoryToSearchVaildOrNotMedicine(object sender, EventArgs e)

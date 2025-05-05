@@ -1,17 +1,9 @@
-﻿using Business_Layer.Repositories;
-using Business_Layer.Services;
-using Business_Layer.UnitOFWork;
+﻿using Business_Layer.Extensions_Methods;
 using Business_Logic.Data;
 using Business_Logic.Models;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.Extensions.DependencyInjection;
-using Business_Layer.Extensions_Methods;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 using Pharmacy_Desktop_App.Admin;
 using Pharmacy_Desktop_App.Pharmacist;
 
@@ -51,6 +43,7 @@ namespace Pharmacy_Desktop_App
             services.AddTransient<DashboardOFPharmacist>();
             services.AddTransient<AddMedicine>();
             services.AddTransient<VaildityCheck>();
+            services.AddTransient<ReportOFAdmin>();
             services.AddLogging();
 
             // Add any other services you need
